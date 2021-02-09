@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-link {
+  @apply underline transition-all;
+}
+.text-link:hover {
+  @apply opacity-60;
+}

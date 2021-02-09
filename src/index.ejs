@@ -1,0 +1,26 @@
+---
+layout: default
+title: Kippy is Online
+projects:
+  - title: Donut
+    description: "At Donut, I helped build the first versions of the app, designed the UI of the app, and all that other stuff."
+    color: bg-donut
+  - title: Cover
+    description: "At Cover I was initially responsible for building out the Android app. Eventually I ended up rebuilding the iOS app for consumers, the iPad app for our restaurant partners, and built an internal admin app in Swift as a proof of concept."
+    color: bg-cover
+  - title: Kullect
+    description: "At Kullect, I built out the Android version of our titular app, as well as built "
+    color: bg-kullect
+---
+
+<div class="container mx-auto grid grid-cols-12 py-64 gap-x-6 gap-y-64">
+  <div class="col-start-3 col-end-10">
+    <p class="text-7xl font-serif font-semibold">👋  Hi, I'm Kippy!</p>
+    <p class="text-4xl mt-8 leading-relaxed">I was one of the founders and the Head of Product at <a class="text-link text-donut" href="https://www.donut.com">Donut</a>. Before that I built the Android and iOS apps at <a class="text-link text-cover" href="https://www.donut.com">Cover</a>, and the Android apps at <a class="text-link text-kullect" href="https://www.donut.com">Kullect</a>.</p>
+  </div>
+
+  <% projects.forEach((project, idx) => { %>
+    <% const flip = (idx % 2) === 0; %>
+    <%- include('/projects/stub', { ...project, flip }) %>
+  <% }); %>
+</div>

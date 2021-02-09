@@ -1,0 +1,21 @@
+<%
+  let imgClass, contentClass;
+  if (flip) {
+    imgClass = 'col-start-1 col-end-5';
+    contentClass = 'col-start-7 col-end-12';
+  } else {
+    imgClass = 'col-start-8 col-end-12';
+    contentClass = 'col-start-1 col-end-6';
+  }
+%>
+
+<div class="grid grid-cols-12 col-span-12">
+  <div class="<%= imgClass %> row-start-1 flex items-center justify-center">
+    Image goes here
+  </div>
+  <div class="<%= contentClass %> row-start-1">
+    <h2 class="font-semibold font-serif text-4xl"><%= title %></h2>
+    <div class="h-1 w-20 mt-3 <%= color %>"></div>
+    <p class="mt-4 text-2xl"><%= description %></p>
+  </div>
+</div>
