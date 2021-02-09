@@ -3,29 +3,36 @@ layout: default
 title: Kippy is Online
 projects:
   - title: Donut
-    description: "At Donut, I helped build the first versions of the app, designed the UI of the app, and all that other stuff."
-    color: bg-donut
+    description: "As one of the co-founders of Donut, I was intimately involved in almost every aspect of bringing it to life, from engineering to, product to marketing."
+    dates: 2016—2020
+    tech: Rails, Vue, Design, Product
+    color: bg-donut dark:bg-donut-dark
     image:
-      src: https://s3.amazonaws.com/kippy.online/donut.svg
-      alt: Donut graphic
+      src: https://www.donut.com/wp-content/uploads/2019/02/donut-founders.jpg
+      alt: A graphic showing people connecting with Donut over various devices
   - title: Cover
-    description: "At Cover I was initially responsible for building out the Android app. Eventually I ended up rebuilding the iOS app for consumers, the iPad app for our restaurant partners, and built an internal admin app in Swift as a proof of concept."
-    color: bg-cover
+    description: "Though I started as Cover's sole android engineer, I eventually took on building out an internal iOS apps and eventually rebuilding both our iPad and iPhone apps."
+    dates: 2014—2016
+    tech: Ruby, iOS, Android
+    color: bg-cover dark:bg-cover-dark
     image:
-      src:
-      alt:
+      src: https://aaron.mn/static/f6607233374add0b4d57b0bcc143a2ee/f0a07/cover.jpg
+      alt: A group of diners using the Cover app enjoying a meal together
   - title: Kullect
-    description: "At Kullect, I built out the Android version of our titular app, as well as built "
-    color: bg-kullect
+    description: "My first 'real' job involved building and maintaining two Android apps, involving interesting work in capturing and manipulating photos, videos, and GIFS."
+    dates: 2012—2014
+    tech: Android
+    color: bg-kullect dark:bg-kullect-dark
     image:
-      src:
-      alt:
+      src: https://s3.amazonaws.com/kippy.online/kullect-cover.png
+      altSrc: https://s3.amazonaws.com/kippy.online/kullect.gif
+      alt: An animated, looping GIF of a person spinning the camera, captioned with the text 'DO A BARREL ROLL'
 ---
 
-<div class="container mx-auto grid grid-cols-12 py-64 gap-x-6 gap-y-64">
-  <div class="col-start-3 col-end-10">
+<div class="container mx-auto grid grid-cols-12 py-64 gap-y-32 gap-x-6">
+  <div class="col-start-3 col-end-10 mb-32">
     <p class="text-7xl font-serif font-semibold">👋  Hi, I'm Kippy!</p>
-    <p class="text-4xl mt-8 leading-relaxed">I was one of the founders and the Head of Product at <a class="text-link text-donut" href="https://www.donut.com">Donut</a>. Before that I built the Android and iOS apps at <a class="text-link text-cover" href="https://www.donut.com">Cover</a>, and the Android apps at <a class="text-link text-kullect" href="https://www.donut.com">Kullect</a>.</p>
+    <p class="text-4xl mt-8 leading-relaxed">I co-founded and was Head of Product at <a class="text-link text-donut dark:text-donut-dark" href="https://www.donut.com">Donut</a>. Before that I built mobile apps at <a class="text-link text-cover dark:text-cover-dark" href="https://www.crunchbase.com/organization/pay-with-cover">Cover</a> and <a class="text-link text-kullect dark:text-kullect-dark" href="https://www.kullect.com/">Kullect</a>.</p>
   </div>
 
   <% projects.forEach((project, idx) => { %>

@@ -3867,10 +3867,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vivere@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.0.20.tgz#c8571a2dea422e8f02bd855f7e4ccd3850a631a6"
-  integrity sha512-fNU2zZTsJkHHRrNAJ8IT1R/sHhOn3Li4c4dk/eE6h02MRMxlEaToihQxvcOY2n5hdP+rV6BEpf4lkf8UeFn5cA==
+vivere@^0.0.23:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.0.23.tgz#930ad9da9a216e6f3d5a56de541850ab8bf5748e"
+  integrity sha512-+aE6QXAMWNCOKJkUVCW8XsCzDTX3eY3iG/md/IcvEdKxledbhCvDToME7E5B7I4Ho1TycYsXxkps6ctGsNBoHg==
   dependencies:
     tailwindcss "^1.4.6"
     turbolinks "^5.2.0"

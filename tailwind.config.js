@@ -10,12 +10,22 @@ module.exports = {
     fontFamily: {
       sans: ['IBM Plex Sans', 'sans-serif'],
       serif: ['IBM Plex Serif', 'serif'],
+      mono: ['IBM Plex Mono', 'mono'],
     },
     extend: {
       colors: {
-        donut: '#7f4fff',
-        cover: '#6c1adb',
-        kullect: '#ff5509',
+        donut: {
+          DEFAULT: '#7f4fff',
+          dark: '#c2acff',
+        },
+        cover: {
+          DEFAULT: '#6c1adb',
+          dark: '#ae8dda',
+        },
+        kullect: {
+          DEFAULT: '#ff5509',
+          dark: '#f88856',
+        },
       },
     },
   },

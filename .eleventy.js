@@ -6,8 +6,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("tmp/styles/main.css");
   eleventyConfig.addPassthroughCopy({ "tmp/styles": "styles" });
 
-  eleventyConfig.addWatchTarget("srcp/scripts/**/*.js");
-
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
   });

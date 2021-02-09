@@ -1,23 +1,32 @@
 <%
   let imgClass, contentClass;
   if (flip) {
-    imgClass = 'col-start-1 col-end-5';
+    imgClass = 'col-start-1 col-end-6';
     contentClass = 'col-start-7 col-end-12';
   } else {
-    imgClass = 'col-start-8 col-end-12';
+    imgClass = 'col-start-7 col-end-12';
     contentClass = 'col-start-1 col-end-6';
   }
 %>
 
-<div class="grid grid-cols-12 col-span-12 items-center">
+<div
+  class="grid grid-cols-12 col-span-12 items-center"
+  v-component="project-stub"
+  v-data:src="<%= image.src %>"
+  v-data:alt-src="<%= image.altSrc %>"
+>
   <img
-    class="<%= imgClass %> row-start-1 flex items-center justify-center"
-    src="<%= image.src %>"
+    class="<%= imgClass %> w-full row-start-1 flex items-center justify-center h-screen object-cover"
+    v-src="computedSrc"
+    v-event:mouseenter="hovering = true"
+    v-event:mouseleave="hovering = false"
     alt="<%= image.alt %>"
   />
   <div class="<%= contentClass %> row-start-1">
     <h2 class="font-semibold font-serif text-4xl"><%= title %></h2>
+    <p class="font-mono text-sm text-gray-600 dark:text-gray-300 mt-2"><%= dates %></p>
     <div class="h-1 w-20 mt-3 <%= color %>"></div>
     <p class="mt-4 text-2xl"><%= description %></p>
+    <p class="font-mono text-gray-600 dark:text-gray-300 mt-4"><%= tech %></p>
   </div>
 </div>
