@@ -3,16 +3,26 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve & postcss src/styles/main.css --o tmp/styles/main.css --watch"
+    "clean": "rimraf _site",
+    "serve:webpack": "webpack --mode development --watch",
+    "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve & postcss src/styles/main.css --o tmp/styles/main.css --watch",
+    "serve": "npm-run-all clean --parallel serve:*",
+    "build:webpack": "webpack --mode production",
+    "build:eleventy": "ELEVENTY_ENV=production eleventy",
+    "build": "run-s clean build:*"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
+    "@11ty/eleventy": "^0.11.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.0.3",
+    "vivere": "^0.0.20"
   }
 }
