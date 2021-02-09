@@ -8,3 +8,7 @@
 .text-link:hover {
   @apply opacity-60;
 }
+
+.dark {
+  @apply bg-black text-white;
+}

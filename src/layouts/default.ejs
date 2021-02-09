@@ -9,7 +9,19 @@
     <title><%= title || siteData.name %></title>
   </head>
   <body>
-    <%- content %>
+    <div
+      class="transition-all"
+      v-component="page"
+      v-class:dark="darkMode"
+    >
+      <div class="absolute right-0 top-0 p-12">
+        <button
+          class="cursor-pointer p-3 border-2 rounded"
+          v-event:click="toggle"
+        >DM</p>
+      </div>
+      <%- content %>
+    </div>
   </body>
   <script type="module" src="/scripts/main.js"></script>
 </html>
