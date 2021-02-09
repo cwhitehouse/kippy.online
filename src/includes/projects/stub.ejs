@@ -9,10 +9,12 @@
   }
 %>
 
-<div class="grid grid-cols-12 col-span-12">
-  <div class="<%= imgClass %> row-start-1 flex items-center justify-center">
-    Image goes here
-  </div>
+<div class="grid grid-cols-12 col-span-12 items-center">
+  <img
+    class="<%= imgClass %> row-start-1 flex items-center justify-center"
+    src="<%= image.src %>"
+    alt="<%= image.alt %>"
+  />
   <div class="<%= contentClass %> row-start-1">
     <h2 class="font-semibold font-serif text-4xl"><%= title %></h2>
     <div class="h-1 w-20 mt-3 <%= color %>"></div>
