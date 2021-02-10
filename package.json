@@ -9,7 +9,7 @@
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve": "npm-run-all clean --parallel serve:*",
     "build:webpack": "webpack --mode production",
-    "build:postcss": "postcss src/styles/main.css --o tmp/styles/main.css",
+    "build:postcss": "NODE_ENV=production postcss src/styles/main.css --o tmp/styles/main.css",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
     "build": "run-s clean build:*"
   },
