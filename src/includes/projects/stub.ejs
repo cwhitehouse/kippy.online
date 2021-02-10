@@ -10,7 +10,7 @@
 %>
 
 <div
-  class="grid grid-cols-12 col-span-12 items-center"
+  class="lg:grid grid-cols-12 col-span-12 items-center mt-32 lg:mt-0"
   v-component
   v-data:hovering="false"
   v-data:src="<%= image.src %>"
@@ -34,7 +34,7 @@
       loading="lazy"
     />
   </picture>
-  <div class="<%= contentClass %> row-start-1">
+  <div class="<%= contentClass %> row-start-1 mt-8 lg:mt-0">
     <h2 class="font-semibold font-serif text-4xl"><%= title %></h2>
     <p class="font-mono text-sm text-gray-600 dark:text-gray-300 mt-2"><%= dates %></p>
     <div class="h-1 w-20 mt-3 <%= color %>"></div>
