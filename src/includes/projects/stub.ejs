@@ -16,15 +16,20 @@
   v-data:src="<%= image.src %>"
   v-data:alt-src="<%= image.altSrc %>"
 >
-  <img
-    class="<%= imgClass %> w-full row-start-1 flex items-center justify-center h-screen object-cover"
-    v-src="hovering && !!altSrc ? altSrc : src"
-    v-event:mouseenter="hovering = true"
-    v-event:mouseleave="hovering = false"
-    src="<%= image.src %>"
-    alt="<%= image.alt %>"
-    loading="lazy"
-  />
+  <picture class="<%= imgClass %> w-full row-start-1 h-screen max-h-800">
+    <% if (!!image.webp) { %>
+      <source srcset="<%= image.webp %>" type="image/webp">
+    <% } %>
+    <img
+      class="w-full h-full object-cover "
+      v-src="hovering && !!altSrc ? altSrc : src"
+      v-event:mouseenter="hovering = true"
+      v-event:mouseleave="hovering = false"
+      src="<%= image.src %>"
+      alt="<%= image.alt %>"
+      loading="lazy"
+    />
+  </picture>
   <div class="<%= contentClass %> row-start-1">
     <h2 class="font-semibold font-serif text-4xl"><%= title %></h2>
     <p class="font-mono text-sm text-gray-600 dark:text-gray-300 mt-2"><%= dates %></p>

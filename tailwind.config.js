@@ -27,6 +27,9 @@ module.exports = {
           dark: '#f88856',
         },
       },
+      maxHeight: {
+        '800': '50rem',
+      },
     },
   },
   variants: {
