@@ -11,15 +11,17 @@
 
 <div
   class="grid grid-cols-12 col-span-12 items-center"
-  v-component="project-stub"
+  v-component
+  v-data:hovering="false"
   v-data:src="<%= image.src %>"
   v-data:alt-src="<%= image.altSrc %>"
 >
   <img
     class="<%= imgClass %> w-full row-start-1 flex items-center justify-center h-screen object-cover"
-    v-src="computedSrc"
+    v-src="hovering && !!altSrc ? altSrc : src"
     v-event:mouseenter="hovering = true"
     v-event:mouseleave="hovering = false"
+    src="<%= image.src %>"
     alt="<%= image.alt %>"
   />
   <div class="<%= contentClass %> row-start-1">

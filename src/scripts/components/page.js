@@ -1,17 +1,10 @@
 export default {
-  data() {
-    return {
-      darkMode: false,
-    };
-  },
-
-  methods: {
-    toggle() {
-      this.darkMode = !this.darkMode;
+  stored: {
+    darkMode: {
+      type: 'session',
+      defaultValue() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      },
     },
-  },
-
-  mounted() {
-
   },
 };

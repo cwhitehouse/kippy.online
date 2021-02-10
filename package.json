@@ -23,6 +23,6 @@
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.3",
-    "vivere": "^0.0.23"
+    "vivere": "^0.0.27"
   }
 }
