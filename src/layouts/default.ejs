@@ -17,6 +17,7 @@
       <div class="absolute right-0 top-0 p-12">
         <button
           class="cursor-pointer h-8 w-8 border rounded border-gray-400 flex items-center justify-center"
+          aria-label="Toggle Dark Mode"
           v-event:click="darkMode = !darkMode"
         >
           <%- include('/icons/moon', { size: 16, attr: 'v-if=darkMode' }) %>
