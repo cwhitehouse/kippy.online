@@ -52,7 +52,7 @@
   v-event:mouseleave="showingModal = false"
 >
   <div
-    class="rounded bg-white border-2 border-gray-200 p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700"
+    class="rounded bg-white border-2 border-gray-200 p-2 lg:p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700"
     role="dialog"
     aria-label="Dark mode selector"
   >
@@ -62,7 +62,7 @@
         dark:text-blue-400
       -->
       <button
-        class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-4"
+        class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-2 lg:p-4"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
         v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"

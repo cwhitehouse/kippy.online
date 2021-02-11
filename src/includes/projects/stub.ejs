@@ -22,7 +22,7 @@
   v-data:src="<%= image.src %>"
   v-data:alt-src="<%= image.altSrc %>"
 >
-  <picture class="<%= imgClass %> w-full row-start-1 h-screen max-h-800">
+  <picture class="<%= imgClass %>">
     <% if (!!image.webp) { %>
       <source
         v-if="!hovering || !altSrc"
@@ -31,7 +31,7 @@
       >
     <% } %>
     <img
-      class="w-full h-full object-cover "
+      class="w-full row-start-1 h-72 lg:h-screen max-h-800 object-cover"
       v-src="hovering && !!altSrc ? altSrc : src"
       v-event:mouseenter="hovering = true"
       v-event:mouseleave="hovering = false"
