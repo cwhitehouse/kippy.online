@@ -22,15 +22,7 @@
       v-component="page"
       v-class:dark="darkMode"
     >
-      <div class="absolute right-0 top-0 p-8 lg:p-12">
-        <button
-          class="button-icon h-8 w-8 lg:h-12 lg:w-12"
-          aria-label="Toggle Dark Mode"
-          v-event:click="darkMode = !darkMode"
-        >
-          <%- include('/icons/moon', { size: 16, attr: 'v-if=darkMode' }) %>
-          <%- include('/icons/sun', { size: 16, attr: 'v-if=!darkMode' }) %>
-      </div>
+      <%- include('/page/dark-mode') %>
       <%- content %>
       <div class="w-full bg-gray-100 dark:bg-transparent dark:border-t border-gray-700">
         <div class="container mx-auto lg:grid grid-cols-12 py-12 lg:py-32 px-4 lg:px-0">
@@ -59,6 +51,7 @@
           <div class="col-span-4 flex items-start lg:justify-end mt-12 lg:mt-0">
             <button
               class="button-icon w-12 h-12"
+              aria-label="Scroll to Top"
               v-event:click="scrollToTop"
             >
               <%- include('/icons/arrow-up', { size: 16 }) %>
