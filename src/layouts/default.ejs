@@ -24,7 +24,7 @@
     >
       <div class="absolute right-0 top-0 p-8 lg:p-12">
         <button
-          class="cursor-pointer h-8 w-8 border rounded border-gray-400 flex items-center justify-center"
+          class="button-icon h-8 w-8 lg:h-12 lg:w-12"
           aria-label="Toggle Dark Mode"
           v-event:click="darkMode = !darkMode"
         >
@@ -32,6 +32,40 @@
           <%- include('/icons/sun', { size: 16, attr: 'v-if=!darkMode' }) %>
       </div>
       <%- content %>
+      <div class="w-full bg-gray-100 dark:bg-transparent dark:border-t border-gray-700">
+        <div class="container mx-auto lg:grid grid-cols-12 py-12 lg:py-32 px-4 lg:px-0">
+          <div class="col-span-4">
+            <p class="text-2xl">Looking for a way to connect?</p>
+            <div class="space-x-6 flex items-center mt-6">
+              <a
+                class="text-link-blue"
+                href="https://www.linkedin.com/in/christian-whitehouse-87342826/"
+              >LinkedIn</a>
+              <a
+                class="text-link-blue"
+                href="https://twitter.com/kiptastic"
+              >Twitter</a>
+              <a
+                class="text-link-blue"
+                href="https://github.com/cwhitehouse"
+              >GitHub</a>
+              <a
+                class="text-link-blue"
+                href="mailto:kippy@hey.com"
+              >Email</a>
+            </div>
+          </div>
+          <div class="col-span-4"></div>
+          <div class="col-span-4 flex items-start lg:justify-end mt-12 lg:mt-0">
+            <button
+              class="button-icon w-12 h-12"
+              v-event:click="scrollToTop"
+            >
+              <%- include('/icons/arrow-up', { size: 16 }) %>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script type="module" src="/scripts/main.js"></script>

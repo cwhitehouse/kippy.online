@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+.dark {
+  @apply bg-gray-900 text-white;
+}
+*[v-if] {
+  display: none;
+}
+
 .text-link {
   @apply underline transition-all;
 }
@@ -9,10 +20,25 @@
   @apply opacity-60;
 }
 
-.dark {
-  @apply bg-black text-white;
+.text-link-blue {
+  @apply underline transition-all;
+}
+.text-link-blue:hover {
+  @apply text-blue-600 transform -translate-y-0.5;
+}
+.dark .text-link-blue:hover {
+  @apply text-blue-300;
 }
 
-*[v-if] {
-  display: none;
+.button-icon {
+  @apply cursor-pointer border-2 rounded text-gray-600 border-gray-400 flex items-center justify-center transition-all;
+}
+.dark .button-icon {
+  @apply text-gray-200;
+}
+.button-icon:hover {
+  @apply border-blue-600 text-blue-700;
+}
+.dark .button-icon:hover {
+  @apply border-blue-400 text-blue-300;
 }
