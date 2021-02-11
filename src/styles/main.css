@@ -14,20 +14,24 @@ html {
 }
 
 .text-link {
-  @apply underline transition-all;
+  @apply underline transition-all inline-block;
 }
-.text-link:hover {
-  @apply opacity-60;
+@screen hoverable {
+  .text-link:hover {
+    @apply opacity-60 transform -translate-y-0.5;
+  }
 }
 
 .text-link-blue {
   @apply underline transition-all;
 }
-.text-link-blue:hover {
-  @apply text-blue-600 transform -translate-y-0.5;
-}
-.dark .text-link-blue:hover {
-  @apply text-blue-300;
+@screen hoverable {
+  .text-link-blue:hover {
+    @apply text-blue-600 transform -translate-y-0.5;
+  }
+  .dark .text-link-blue:hover {
+    @apply text-blue-300;
+  }
 }
 
 .button-icon {
@@ -36,9 +40,11 @@ html {
 .dark .button-icon {
   @apply text-gray-200;
 }
-.button-icon:hover {
-  @apply border-blue-600 text-blue-700;
-}
-.dark .button-icon:hover {
-  @apply border-blue-400 text-blue-300;
+@screen hoverable {
+  .button-icon:hover {
+    @apply border-blue-600 text-blue-700;
+  }
+  .dark .button-icon:hover {
+    @apply border-blue-400 text-blue-300;
+  }
 }

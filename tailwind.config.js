@@ -8,6 +8,7 @@ module.exports = {
     'src/**/*.css',
   ],
   darkMode: 'class',
+
   theme: {
     colors: {
       current: 'currentColor',
@@ -34,16 +35,22 @@ module.exports = {
       serif: ['IBM Plex Serif', 'ui-serif', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'],
       mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
     },
+
     extend: {
       maxHeight: {
         '800': '50rem',
       },
+      screens: {
+        hoverable: {'raw': '(hover: hover)'},
+      },
     },
   },
+
   variants: {
     extend: {
       borderWidth: ['dark'],
     },
   },
+
   plugins: [],
 }

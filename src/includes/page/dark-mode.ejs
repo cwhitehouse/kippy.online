@@ -57,7 +57,7 @@
         dark:text-blue-400
       -->
       <div
-        class="flex flex-col items-center text-center lg:w-40 cursor-pointer hover:bg-blue-100 dark:hover:bg-gray-700 rounded p-4"
+        class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-4"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
         v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"
