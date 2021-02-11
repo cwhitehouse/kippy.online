@@ -27,8 +27,8 @@
 <div class="absolute right-0 top-0 m-8 lg:m-12 flex flex-col items-end">
   <div
     class="p-1 lg:p-2"
-    v-event:mouseover="showingModal = true"
-    v-event:click="showingModal = true"
+    v-event:mouseover="mouseOverDarkMode"
+    v-event:click="clickedDarkMode"
   >
     <div v-if="darkMode && mode === 'auto'">
       <%- include('/icons/moon-auto', { size: 24 }) %>
@@ -56,7 +56,7 @@
         class="flex flex-col items-center text-center lg:w-40 cursor-pointer hover:bg-blue-100 dark:hover:bg-gray-700 rounded p-4"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
         v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
-        v-event:click="mode = '<%= option.mode %>'"
+        v-event:click="setMode('<%= option.mode %>')"
       >
         <% if (!!option.icon.light) { %>
           <%- include(`/icons/${option.icon.light}`, { size: 28, attr: 'v-if=!systemDark' }) %>
