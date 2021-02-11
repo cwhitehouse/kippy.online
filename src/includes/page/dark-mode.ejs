@@ -52,6 +52,10 @@
 >
   <div class="rounded bg-white border-2 border-gray-200 p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700">
     <% options.forEach((option, idx) => { %>
+      <!--
+        text-blue-600
+        dark:text-blue-400
+      -->
       <div
         class="flex flex-col items-center text-center lg:w-40 cursor-pointer hover:bg-blue-100 dark:hover:bg-gray-700 rounded p-4"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
@@ -64,6 +68,10 @@
         <% } else { %>
           <%- include(`/icons/${option.icon}`, { size: 28 }) %>
         <% } %>
+        <!--
+          text-blue-700
+          dark:text-blue-400
+        -->
         <p
           class="font-mono mt-4"
           v-class:text-blue-700="mode === '<%= option.mode %>'"
