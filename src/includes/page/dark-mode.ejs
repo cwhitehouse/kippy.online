@@ -25,10 +25,11 @@
 %>
 
 <div class="absolute right-0 top-0 m-8 lg:m-12 flex flex-col items-end">
-  <div
+  <button
     class="p-1 lg:p-2"
     v-event:mouseover="mouseOverDarkMode"
     v-event:click="clickedDarkMode"
+    aria-label="Open dark mode selector"
   >
     <div v-if="darkMode && mode === 'auto'">
       <%- include('/icons/moon-auto', { size: 24 }) %>
@@ -42,7 +43,7 @@
     <div v-if="mode === 'light'">
       <%- include('/icons/sun', { size: 24 }) %>
     </div>
-  </div>
+  </button>
 </div>
 
 <div
@@ -50,17 +51,22 @@
   v-if="showingModal"
   v-event:mouseleave="showingModal = false"
 >
-  <div class="rounded bg-white border-2 border-gray-200 p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700">
+  <div
+    class="rounded bg-white border-2 border-gray-200 p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700"
+    role="dialog"
+    aria-label="Dark mode selector"
+  >
     <% options.forEach((option, idx) => { %>
       <!--
         text-blue-600
         dark:text-blue-400
       -->
-      <div
+      <button
         class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-4"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
         v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"
+        aria-label="Choose the '<%= option.mode %>' dark mode setting"
       >
         <% if (!!option.icon.light) { %>
           <%- include(`/icons/${option.icon.light}`, { size: 28, attr: 'v-if=!systemDark' }) %>
@@ -78,7 +84,7 @@
           v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
         ><%= option.label %></p>
         <p class="text-sm text-black dark:text-white mt-2"><%= option.description %></p>
-      </div>
+      </button>
     <% }); %>
   </div>
 </div>
