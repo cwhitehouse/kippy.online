@@ -34,7 +34,7 @@ export default {
     },
 
     mouseOverDarkMode() {
-      // this.usedMouse = true;
+      this.usedMouse = true;
       this.showingModal = true;
     },
 
