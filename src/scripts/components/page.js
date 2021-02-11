@@ -50,11 +50,21 @@ export default {
       }
     },
 
-    setMode(mode) {
+    clickedOutside() {
       if (!this.usedMouse)
-        this.showingModal = false;
+        this.closeModal();
+    },
 
+    setMode(mode) {
       this.mode = mode;
+
+      if (!this.usedMouse)
+        this.closeModal();
+    },
+
+    closeModal() {
+      this.usedMouse = false;
+      this.showingModal = false;
     },
   },
 
