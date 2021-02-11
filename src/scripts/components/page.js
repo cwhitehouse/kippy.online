@@ -38,11 +38,16 @@ export default {
       this.showingModal = true;
     },
 
-    clickedDarkMode() {
-      console.log('clikceddarkmode!');
-
+    clickedDarkMode(e) {
       this.usedMouse = false;
       this.showingModal = true;
+
+      // triggered by the keyboard
+      if (e.detail === 0) {
+        this.$nextRender(() => {
+          this.$refs.auto.focus();
+        });
+      }
     },
 
     setMode(mode) {

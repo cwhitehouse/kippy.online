@@ -26,7 +26,7 @@
 
 <div class="absolute right-0 top-0 m-8 lg:m-12 flex flex-col items-end">
   <button
-    class="p-1 lg:p-2"
+    class="p-1 lg:p-2 text-gray-600 dark:text-gray-300"
     v-event:mouseover="mouseOverDarkMode"
     v-event:click="clickedDarkMode"
     aria-label="Open dark mode selector"
@@ -58,15 +58,20 @@
   >
     <% options.forEach((option, idx) => { %>
       <!--
+        text-gray-600
+        dark:text-gray-300
         text-blue-600
         dark:text-blue-400
       -->
       <button
         class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-2 lg:p-4"
+        v-class:text-gray-600="mode !== '<%= option.mode %>'"
+        v-class:dark:text-gray-300="mode !== '<%= option.mode %>'"
         v-class:text-blue-600="mode === '<%= option.mode %>'"
         v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"
         aria-label="Choose the '<%= option.mode %>' dark mode setting"
+        v-ref="<%= option.mode %>"
       >
         <% if (!!option.icon.light) { %>
           <%- include(`/icons/${option.icon.light}`, { size: 28, attr: 'v-if=!systemDark' }) %>
