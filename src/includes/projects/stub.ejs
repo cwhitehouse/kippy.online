@@ -1,44 +1,43 @@
 <%
-  let imgClass, contentClass;
-  if (flip) {
-    imgClass = 'col-start-1 col-end-6';
-    contentClass = 'col-start-7 col-end-12';
-  } else {
-    imgClass = 'col-start-7 col-end-12';
-    contentClass = 'col-start-1 col-end-6';
-  }
+  let wrapperClass;
+  if (idx % 2 !== 0)
+    wrapperClass ='col-start-7';
 %>
 
-<div
-  class="lg:grid grid-cols-12 col-span-12 items-center"
-  v-component
-  v-data:hovering="false"
-  v-data:src="<%= image.src %>"
-  v-data:alt-src="<%= image.altSrc %>"
->
-  <picture class="<%= imgClass %>">
-    <% if (!!image.webp) { %>
-      <source
-        v-if="!hovering || !altSrc"
-        srcset="<%= image.webp %>"
-        type="image/webp"
+<div class="col-span-5 <%= wrapperClass %>">
+  <div class="h-64">
+    <%- include('/projects/vivere') %>
+  </div>
+  <p class="font-semibold font-serif text-3xl lg:text-4xl mt-8"><%= title %></p>
+  <p class="text-lg lg:text-2xl mt-4"><%= description %></p>
+  <p class="font-mono text-sm text-gray-600 dark:text-gray-300 mt-4"><%= tech %></p>
+  <div class="flex items-center mt-4 space-x-4">
+    <% if (!!github) { %>
+      <a
+        class="icon-link-blue py-1"
+        href="<%= github %>"
+        aria-label="Link to GitHub"
       >
+        <%- include('/icons/github', { size: 24 }) %>
+      </a>
     <% } %>
-    <img
-      class="w-full row-start-1 h-72 lg:h-screen max-h-800 object-cover"
-      v-src="hovering && !!altSrc ? altSrc : src"
-      v-event:mouseenter="hovering = true"
-      v-event:mouseleave="hovering = false"
-      src="<%= image.src %>"
-      alt="<%= image.alt %>"
-      loading="lazy"
-    />
-  </picture>
-  <div class="<%= contentClass %> row-start-1 mt-8 lg:mt-0">
-    <h2 class="font-semibold font-serif text-3xl lg:text-4xl"><%= title %></h2>
-    <p class="font-mono text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-2"><%= dates %></p>
-    <div class="h-1 w-12 lg:w-20 mt-3 <%= color %>"></div>
-    <p class="mt-4 text-lg lg:text-2xl leading-normal"><%= description %></p>
-    <p class="font-mono text-sm lg:text-base text-gray-600 dark:text-gray-300 mt-4"><%= tech %></p>
+    <% if (!!website) { %>
+      <a
+        class="icon-link-blue py-1"
+        href="<%= website %>"
+        aria-label="Link to Website"
+      >
+        <%- include('/icons/web', { size: 24 }) %>
+      </a>
+    <% } %>
+    <% if (!!npm) { %>
+      <a
+        class=icon-link-blue
+        href="<%= npm %>"
+        aria-label="Link to npm"
+      >
+        <%- include('/icons/npm', { size: 32 }) %>
+      </a>
+    <% } %>
   </div>
 </div>

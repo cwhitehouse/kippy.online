@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Kippy is Online
-projects:
+workHistory:
   - title: Donut
     description: "As one of the co-founders of Donut, I was intimately involved in almost every aspect of bringing it to life, from engineering to, product to marketing."
     dates: 2016—2020
@@ -45,9 +45,12 @@ projects:
   </div>
 </div>
 
-<div class="space-y-32 pb-32 large:space-y-64 lage:pb-64">
-  <% projects.forEach((project, idx) => { %>
+<div
+  id="work-history"
+  class="space-y-32 pb-32 large:space-y-64 lage:pb-64 pt-16 -mt-16"
+>
+  <% workHistory.forEach((work, idx) => { %>
     <% const flip = (idx % 2) === 0; %>
-    <%- include('/projects/stub', { ...project, flip }) %>
+    <%- include('/work/stub', { ...work, flip }) %>
   <% }); %>
 </div>

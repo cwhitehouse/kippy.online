@@ -1,0 +1,39 @@
+---
+layout: default
+title: Kippy is Online
+
+projects:
+  - title: vivere
+    description: A light-weight javascript framework for progressively enhancing HTML with reactive components.
+    tech: Typescript
+    github: https://github.com/cwhitehouse/vivere
+    website:
+    npm: https://www.npmjs.com/package/vivere
+  - title: vivere docs
+    description: Static documentation site for vivere, with fun interactive examples!
+    tech: 11ty, Vivere, TailwindCSS
+    github: https://github.com/cwhitehouse/vivere-docs
+    website: https://viverejs.com
+    npm:
+  - title: blueprint kitchen
+    description: Interactive recipes displayed as helpful workflows aware of timing, instead of static lists.
+    tech: Rails, Vivere, TailwindCSS
+    github:
+    website: https://blueprint-kitchen.herokuapp.com/recipes
+    npm:
+---
+
+<div class="k-grid">
+  <div
+    class="col-start-3 col-end-10 flex flex-col justify-center items-start"
+    style="height: 90vh;"
+  >
+    <h1 class="text-6xl lg:text-7xl font-serif font-semibold border-b-2 border-blue-500 dark:border-blue-300">Personal Projects</h1>
+    <h2 class="text-3xl lg:text-4xl mt-8 leading-normal lg:leading-relaxed mt-6">A curated collection of personal projects, from the barely conceived to the immediately adoptable.</h2>
+  </div>
+</div>
+<div id="projects" class="k-grid space-y-24 lg:space-y-0 lg:gap-y-32 pb-24 lg:pb-32 pt-16 -mt-16">
+  <% projects.forEach((project, idx) => { %>
+    <%- include('/projects/stub', { ...project, idx }) %>
+  <% }); %>
+</div>

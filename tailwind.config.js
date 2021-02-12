@@ -17,6 +17,9 @@ module.exports = {
       white: colors.white,
       gray: colors.blueGray,
       blue: colors.indigo,
+      red: colors.rose,
+      purple: colors.violet,
+      lime: colors.lime,
       donut: {
         DEFAULT: '#7f4fff',
         dark: '#c2acff',

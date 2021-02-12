@@ -16,18 +16,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=IBM+Plex+Serif:wght@600&display=fallback" rel="stylesheet">
   </head>
-  <body>
-    <div
-      class="transition-all"
-      v-component="page"
-      v-class:dark="darkMode"
-    >
-      <%- include('/page/dark-mode') %>
-      <div class="k-container">
-        <%- content %>
-      </div>
-      <%- include('/page/footer') %>
-    </div>
+  <body
+    class="transition-all"
+    v-component="page"
+    v-class:dark="darkMode"
+  >
+    <main class="k-container relative">
+      <%- include('/page/navigation') %>
+      <%- content %>
+    </main>
+    <%- include('/page/footer') %>
   </body>
   <script type="module" src="/scripts/main.js"></script>
 </html>

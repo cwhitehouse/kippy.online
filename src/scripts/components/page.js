@@ -15,6 +15,22 @@ export default {
   },
 
   computed: {
+    workHref() {
+      const pathname = window.location.pathname;
+      const defaultPath = '/';
+
+      if (pathname === defaultPath) return '#work-history';
+      return defaultPath;
+    },
+
+    projectsHref() {
+      const pathname = window.location.pathname;
+      const defaultPath = '/projects/';
+
+      if (pathname === defaultPath) return '#projects';
+      return defaultPath;
+    },
+
     darkMode() {
       const { mode, systemDark } = this;
 

@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -42,13 +43,27 @@ html {
 /* Blue links */
 
 .text-link-blue {
-  @apply underline transition-all;
+  @apply underline transition-all inline-block;
 }
 @screen hoverable {
   .text-link-blue:hover {
     @apply text-blue-600 transform -translate-y-0.5;
   }
   .dark .text-link-blue:hover {
+    @apply text-blue-300;
+  }
+}
+
+/* Icon Links */
+
+.icon-link-blue {
+  @apply transition-all inline-block;
+}
+@screen hoverable {
+  .icon-link-blue:hover {
+    @apply text-blue-600 transform -translate-y-0.5;
+  }
+  .dark .icon-link-blue:hover {
     @apply text-blue-300;
   }
 }
@@ -79,7 +94,7 @@ html {
 }
 
 .k-grid {
-  @apply grid-cols-12;
+  @apply grid-cols-12 gap-x-6;
 }
 @screen lg {
   .k-grid {
