@@ -1,17 +1,34 @@
+/* TAILWIND */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* DEFAULTS */
 
 html {
   scroll-behavior: smooth;
 }
 
+
+/* DARK MODE */
+
 .dark {
   @apply bg-gray-900 text-white;
 }
+
+
+/* VIVERE HELPERS */
+
 *[v-if] {
   display: none;
 }
+
+
+/* LINKS */
+
+/* Custom colored links */
 
 .text-link {
   @apply underline transition-all inline-block;
@@ -21,6 +38,8 @@ html {
     @apply opacity-60 transform -translate-y-0.5;
   }
 }
+
+/* Blue links */
 
 .text-link-blue {
   @apply underline transition-all;
@@ -34,6 +53,9 @@ html {
   }
 }
 
+
+/* BUTTONS */
+
 .button-icon {
   @apply cursor-pointer border-2 rounded text-gray-600 border-gray-400 flex items-center justify-center transition-all;
 }
@@ -46,5 +68,21 @@ html {
   }
   .dark .button-icon:hover {
     @apply border-blue-400 text-blue-300;
+  }
+}
+
+
+/* LAYOUTS */
+
+.k-container {
+  @apply container mx-auto px-4 lg:px-0;
+}
+
+.k-grid {
+  @apply grid-cols-12;
+}
+@screen lg {
+  .k-grid {
+    @apply grid;
   }
 }

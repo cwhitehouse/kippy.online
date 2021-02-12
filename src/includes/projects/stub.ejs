@@ -7,16 +7,10 @@
     imgClass = 'col-start-7 col-end-12';
     contentClass = 'col-start-1 col-end-6';
   }
-
-  let wrapperClass;
-  if (idx === 0)
-    wrapperClass = 'mt-0 lg:-mt-64';
-  else
-    wrapperClass = 'mt-32 lg:mt-0';
 %>
 
 <div
-  class="lg:grid grid-cols-12 col-span-12 items-center <%= wrapperClass %>"
+  class="lg:grid grid-cols-12 col-span-12 items-center"
   v-component
   v-data:hovering="false"
   v-data:src="<%= image.src %>"

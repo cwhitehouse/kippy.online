@@ -1,0 +1,35 @@
+<div class="w-full bg-gray-100 dark:bg-transparent dark:border-t border-gray-700">
+  <div class="k-container k-grid py-12 lg:py-32">
+    <div class="col-span-4">
+      <p class="text-2xl">Looking for a way to connect?</p>
+      <div class="space-x-6 flex items-center mt-6">
+        <a
+          class="text-link-blue"
+          href="https://www.linkedin.com/in/christian-whitehouse-87342826/"
+        >LinkedIn</a>
+        <a
+          class="text-link-blue"
+          href="https://twitter.com/kiptastic"
+        >Twitter</a>
+        <a
+          class="text-link-blue"
+          href="https://github.com/cwhitehouse"
+        >GitHub</a>
+        <a
+          class="text-link-blue"
+          href="mailto:kippy@hey.com"
+        >Email</a>
+      </div>
+    </div>
+    <div class="col-span-4"></div>
+    <div class="col-span-4 flex items-start lg:justify-end mt-12 lg:mt-0">
+      <button
+        class="button-icon w-12 h-12"
+        aria-label="Scroll to top of page"
+        v-event:click="scrollToTop"
+      >
+        <%- include('/icons/arrow-up', { size: 16 }) %>
+      </button>
+    </div>
+  </div>
+</div>
