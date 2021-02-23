@@ -23,13 +23,14 @@
     </div>
     <div class="col-span-4"></div>
     <div class="col-span-4 flex items-start lg:justify-end mt-12 lg:mt-0">
-      <button
+      <a
         class="button-icon w-12 h-12"
         aria-label="Scroll to top of page"
+        href="#top"
         v-event:click="scrollToTop"
       >
         <%- include('/icons/arrow-up', { size: 16 }) %>
-      </button>
+    </a>
     </div>
   </div>
 </div>

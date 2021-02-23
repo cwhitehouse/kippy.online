@@ -4571,10 +4571,10 @@ vendors@^1.0.0:
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
 
-vivere@^0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.0.31.tgz#5692345349f13004e0ec4c93381712650edb0d06"
-  integrity sha512-dmQuvpycov9LAWBf78u9yHuFDoyuohnAPceE6PV12/Wnqq2hDBVL8zrb5ETbtPqqcMo+ykJDhdPaKuV88Jjvdw==
+vivere@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.0.35.tgz#8aa3faa175e3d9bfa2470e525b6f6f9e51f5b174"
+  integrity sha512-R8saPpOreAxrs9V4upF1irj0Kst2Lg+SAEBLeew7CkQJX3Zugq7JqbI5xP4yuFXesYrVtrclWpQp88igLM9a+A==
   dependencies:
     tailwindcss "^1.4.6"
     turbolinks "^5.2.0"
