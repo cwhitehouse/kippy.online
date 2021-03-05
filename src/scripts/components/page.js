@@ -6,7 +6,7 @@ export default {
   stored: {
     mode: {
       type: 'local',
-      defaultValue: 'auto',
+      default: 'auto',
     },
   },
 
