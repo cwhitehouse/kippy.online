@@ -12,23 +12,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="manifest" href="/assets/site.webmanifest">
 
-    <link rel="stylesheet" href="/styles/main.css"/>
+    <link rel="stylesheet" href="/main.css" data-turbo-track="reload"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=IBM+Plex+Serif:wght@600&display=fallback" rel="stylesheet">
+
+    <script type="module" src="/main.js" data-turbo-track="reload"  defer></script>
   </head>
-  <body>
+  <body
+    class="transition-all"
+    v-component="page"
+    v-class:dark="darkMode"
+  >
     <a name="top"></a>
-    <div
-      class="transition-all"
-      v-component="page"
-      v-class:dark="darkMode"
-    >
-      <%- include('/page/dark-mode') %>
-      <div class="k-container">
-        <%- content %>
-      </div>
-      <%- include('/page/footer') %>
-    </div>
+    <main class="k-container relative">
+      <%- include('/page/navigation') %>
+      <%- content %>
+    </main>
+    <%- include('/page/footer') %>
   </body>
-  <script type="module" src="/scripts/main.js"></script>
 </html>
