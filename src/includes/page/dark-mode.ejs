@@ -25,8 +25,9 @@
 %>
 
 <div
-  class="flex flex-col items-end relative"
+  v-hide
   v-event:click.outside="clickedOutside"
+  class="flex flex-col items-end relative"
 >
   <button
     class="p-1 lg:p-2 text-gray-600 dark:text-gray-300"
@@ -60,7 +61,7 @@
       <button
         v-event:click="setMode('<%= option.mode %>')"
         v-event:keydown.esc="closeModal"
-        class="flex items-center hover:bg-blue-100 dark:hover:bg-gray-700 px-2 lg:px-4 py-2"
+        class="flex items-center hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 px-2 lg:px-4 py-2"
         aria-label="<%= option.description %>"
         aria-roledescription=""
         v-ref="<%= option.mode %>"

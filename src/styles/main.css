@@ -25,7 +25,7 @@ html {
 
 /* VIVERE HELPERS */
 
-*[v-if] {
+[hidden], [v-hide] {
   display: none;
 }
 
