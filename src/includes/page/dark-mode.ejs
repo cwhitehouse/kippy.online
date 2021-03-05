@@ -60,18 +60,11 @@
     aria-label="Dark mode selector"
   >
     <% options.forEach((option, idx) => { %>
-      <!--
-        text-gray-600
-        dark:text-gray-300
-        text-blue-600
-        dark:text-blue-400
-      -->
+      <!-- text-gray-600 dark:text-gray-300 text-blue-600 dark:text-blue-400 -->
       <button
         class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-2 lg:p-4"
-        v-class:text-gray-600="mode !== '<%= option.mode %>'"
-        v-class:dark:text-gray-300="mode !== '<%= option.mode %>'"
-        v-class:text-blue-600="mode === '<%= option.mode %>'"
-        v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
+        v-class:text-gray-600.dark:text-gray-300="mode !== '<%= option.mode %>'"
+        v-class:text-blue-600.dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"
         v-event:keydown.esc="closeModal"
         aria-label="Choose the '<%= option.mode %>' dark mode setting"
@@ -87,14 +80,10 @@
         <% } else { %>
           <%- include(`/icons/${option.icon}`, { size: 28 }) %>
         <% } %>
-        <!--
-          text-blue-700
-          dark:text-blue-400
-        -->
+        <!-- text-blue-700 dark:text-blue-400 -->
         <p
           class="font-mono mt-4"
-          v-class:text-blue-700="mode === '<%= option.mode %>'"
-          v-class:dark:text-blue-400="mode === '<%= option.mode %>'"
+          v-class:text-blue-700.dark:text-blue-400="mode === '<%= option.mode %>'"
         ><%= option.label %></p>
         <p class="text-sm text-black dark:text-white mt-2"><%= option.description %></p>
       </button>
