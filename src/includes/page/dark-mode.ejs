@@ -78,8 +78,12 @@
         v-ref="<%= option.mode %>"
       >
         <% if (!!option.icon.light) { %>
-          <%- include(`/icons/${option.icon.light}`, { size: 28, attr: 'v-if=!systemDark' }) %>
-          <%- include(`/icons/${option.icon.dark}`, { size: 28, attr: 'v-if=systemDark' }) %>
+          <div v-if="!systemDark">
+            <%- include(`/icons/${option.icon.light}`, { size: 28 }) %>
+          </div>
+          <div v-if="systemDark">
+            <%- include(`/icons/${option.icon.dark}`, { size: 28 }) %>
+          </div>
         <% } else { %>
           <%- include(`/icons/${option.icon}`, { size: 28 }) %>
         <% } %>

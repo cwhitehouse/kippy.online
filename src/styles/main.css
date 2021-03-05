@@ -18,6 +18,9 @@ html {
 .dark {
   @apply bg-gray-900 text-white;
 }
+.dark *, .dark :before, .dark :after {
+  @apply border-gray-700;
+}
 
 
 /* VIVERE HELPERS */
