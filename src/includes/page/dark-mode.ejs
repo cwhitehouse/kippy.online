@@ -2,7 +2,7 @@
   const options = [
     {
       label: 'Auto',
-      description: 'Use whatever setting your browser is using',
+      description: 'Use whatever dark mode setting your browser is using',
       icon: {
         light: 'sun-auto',
         dark: 'moon-auto',
@@ -25,7 +25,7 @@
 %>
 
 <div
-  class="flex flex-col items-end"
+  class="flex flex-col items-end relative"
   v-event:click.outside="clickedOutside"
 >
   <button
@@ -47,45 +47,40 @@
       <%- include('/icons/sun', { size: 24 }) %>
     </div>
   </button>
-</div>
 
-<div
-  class="absolute right-0 top-0 m-3 lg:m-6"
-  v-if="showingModal"
-  v-event:mouseleave="closeModal"
->
   <div
-    class="rounded bg-white border-2 border-gray-200 p-2 lg:p-4 shadow-lg flex items-start dark:bg-gray-800 dark:border-gray-700"
+    v-if="showingModal"
+    v-event:mouseleave="closeModal"
+    class="absolute -mt-3 lg:-mt-2 -mr-1 lg:-mr-2 flex flex-col items-stretch rounded bg-white dark:bg-gray-800 py-2 border-2 shadow-xl space-y-1"
     role="dialog"
     aria-label="Dark mode selector"
+    style="top: -2px; right: -2px;"
   >
     <% options.forEach((option, idx) => { %>
-      <!-- text-gray-600 dark:text-gray-300 text-blue-600 dark:text-blue-400 -->
       <button
-        class="flex flex-col items-center text-center lg:w-40 cursor-pointer hoverable:hover:bg-blue-100 hoverable:dark:hover:bg-gray-700 rounded p-2 lg:p-4"
-        v-class:text-gray-600.dark:text-gray-300="mode !== '<%= option.mode %>'"
-        v-class:text-blue-600.dark:text-blue-400="mode === '<%= option.mode %>'"
         v-event:click="setMode('<%= option.mode %>')"
         v-event:keydown.esc="closeModal"
-        aria-label="Choose the '<%= option.mode %>' dark mode setting"
+        class="flex items-center hover:bg-blue-100 dark:hover:bg-gray-700 px-2 lg:px-4 py-2"
+        aria-label="<%= option.description %>"
+        aria-roledescription=""
         v-ref="<%= option.mode %>"
       >
-        <% if (!!option.icon.light) { %>
-          <div v-if="!systemDark">
-            <%- include(`/icons/${option.icon.light}`, { size: 28 }) %>
-          </div>
-          <div v-if="systemDark">
-            <%- include(`/icons/${option.icon.dark}`, { size: 28 }) %>
-          </div>
-        <% } else { %>
-          <%- include(`/icons/${option.icon}`, { size: 28 }) %>
-        <% } %>
-        <!-- text-blue-700 dark:text-blue-400 -->
+        <!-- text-blue-600 dark:text-blue-500 text-gray-800 dark:text-gray-400 -->
         <p
-          class="font-mono mt-4"
-          v-class:text-blue-700.dark:text-blue-400="mode === '<%= option.mode %>'"
-        ><%= option.label %></p>
-        <p class="text-sm text-black dark:text-white mt-2"><%= option.description %></p>
+          v-class:text-blue-600.dark:text-blue-400="mode === '<%= option.mode %>'"
+          v-class:text-gray-500.dark:text-gray-400="mode !== '<%= option.mode %>'"
+        >
+          <% if (!!option.icon.light) { %>
+            <span v-if="!systemDark">
+              <%- include(`/icons/${option.icon.light}`, { size: 24 }) %>
+            </span>
+            <span v-if="systemDark">
+              <%- include(`/icons/${option.icon.dark}`, { size: 24 }) %>
+            </span>
+          <% } else { %>
+            <%- include(`/icons/${option.icon}`, { size: 24 }) %>
+          <% } %>
+        </p>
       </button>
     <% }); %>
   </div>
