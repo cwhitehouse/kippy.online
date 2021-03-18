@@ -4516,10 +4516,10 @@ vendors@^1.0.0:
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
 
-vivere@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.1.6.tgz#42640440fc3a4cee4465bd1729280931106347fc"
-  integrity sha512-0K0DXaO2ldXnMcx7u/itzXk3697tMhn9y64L419tl3rks1UOEk8bZEjfKcTt/uf7nbvsfM817PWZBObBpB432Q==
+vivere@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/vivere/-/vivere-0.1.8.tgz#0000212a9698ee2fc771b72c12c40ed507fa76d6"
+  integrity sha512-LdhvyQJ1Mu3G71YZdpFrs/VKsXNFKDPVLM8b7GdzStJiXyS3uK6S56AKXisAL4O4pFD/eKilHZVkGBYEljVf6w==
 
 void-elements@^2.0.1:
   version "2.0.1"
