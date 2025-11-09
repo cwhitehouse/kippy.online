@@ -1,0 +1,13 @@
+---
+import DarkModeSelector from './DarkModeSelector';
+
+const currentPath = Astro.url.pathname;
+const workHref = currentPath === '/' ? '#work-history' : '/';
+const projectsHref = currentPath === '/projects' || currentPath === '/projects/' ? '#projects' : '/projects';
+---
+
+<nav class="absolute top-0 left-0 right-0 flex items-center justify-end px-4 py-12 lg:px-8 lg:py-16 space-x-6">
+  <a class="text-link-blue text-lg" href={workHref}>Work</a>
+  <a class="text-link-blue text-lg" href={projectsHref}>Projects</a>
+  <DarkModeSelector client:load />
+</nav>

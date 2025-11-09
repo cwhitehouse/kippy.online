@@ -1,11 +1,8 @@
-const colors = require('tailwindcss/colors');
+import colors from 'tailwindcss/colors';
 
-module.exports = {
-  purge: [
-    'src/**/*.html',
-    'src/**/*.js',
-    'src/**/*.ejs',
-    'src/**/*.css',
+export default {
+  content: [
+    './src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}',
   ],
   darkMode: 'class',
 
@@ -15,8 +12,8 @@ module.exports = {
       transparent: 'transparent',
       black: colors.black,
       white: colors.white,
-      gray: colors.blueGray,
-      blue: colors.indigo,
+      gray: colors.slate,
+      blue: colors.blue,
       red: colors.rose,
       purple: colors.violet,
       lime: colors.lime,
@@ -49,11 +46,5 @@ module.exports = {
     },
   },
 
-  variants: {
-    extend: {
-      borderWidth: ['dark'],
-    },
-  },
-
   plugins: [],
-}
+};
