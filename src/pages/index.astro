@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorkStub from '../components/WorkStub.astro';
+
+const workHistory = [
+  {
+    title: 'Donut',
+    description: 'As one of the co-founders of Donut, I was intimately involved in almost every aspect of bringing it to life, from engineering to, product to marketing.',
+    dates: '2016\u20142020',
+    tech: 'Rails, Vue, Design, Product',
+    color: 'bg-donut dark:bg-donut-dark',
+    image: {
+      src: 'https://s3.amazonaws.com/kippy.online/donut.jpg',
+      webp: 'https://s3.amazonaws.com/kippy.online/donut.webp',
+      alt: 'The founding team of Donut holding donuts',
+    },
+  },
+  {
+    title: 'Cover',
+    description: "Though I started as Cover's sole android engineer, I eventually took on building out an internal iOS apps and eventually rebuilding both our iPad and iPhone apps.",
+    dates: '2014\u20142016',
+    tech: 'Ruby, iOS, Android',
+    color: 'bg-cover dark:bg-cover-dark',
+    image: {
+      src: 'https://s3.amazonaws.com/kippy.online/cover.jpg',
+      webp: 'https://s3.amazonaws.com/kippy.online/cover.webp',
+      alt: 'A group of diners using the Cover app enjoying a meal together',
+    },
+  },
+  {
+    title: 'Kullect',
+    description: "My first 'real' job involved building and maintaining two Android apps, involving interesting work in capturing and manipulating photos, videos, and GIFS.",
+    dates: '2012\u20142014',
+    tech: 'Android',
+    color: 'bg-kullect dark:bg-kullect-dark',
+    image: {
+      src: 'https://s3.amazonaws.com/kippy.online/kullect.png',
+      webp: 'https://s3.amazonaws.com/kippy.online/kullect.webp',
+      altSrc: 'https://s3.amazonaws.com/kippy.online/kullect.gif',
+      alt: "An animated, looping GIF of a person spinning the camera, captioned with the text 'DO A BARREL ROLL'",
+    },
+  },
+];
+---
+
+<Layout title="Kippy is Online">
+  <div class="k-grid">
+    <div
+      class="col-start-3 col-end-10 flex flex-col justify-center"
+      style="height: 90vh"
+    >
+      <p class="text-6xl lg:text-7xl font-serif font-semibold leading-tight">
+        <span class="hidden lg:inline">&#x1F44B;</span>
+        <span>Hi, I'm Kippy!</span>
+      </p>
+      <p class="text-3xl lg:text-4xl mt-8 leading-normal lg:leading-relaxed">I co-founded and was Head of Product at <a class="text-link text-donut dark:text-donut-dark" href="https://www.donut.com">Donut</a>. Before that I built mobile apps at <a class="text-link text-cover dark:text-cover-dark" href="https://www.crunchbase.com/organization/pay-with-cover">Cover</a> and <a class="text-link text-kullect dark:text-kullect-dark" href="https://www.kullect.com/">Kullect</a>.</p>
+    </div>
+  </div>
+
+  <div
+    id="work-history"
+    class="space-y-32 pb-32 lg:space-y-64 lg:pb-64 pt-16 -mt-16"
+  >
+    {workHistory.map((work, idx) => (
+      <WorkStub {...work} flip={idx % 2 === 0} />
+    ))}
+  </div>
+</Layout>

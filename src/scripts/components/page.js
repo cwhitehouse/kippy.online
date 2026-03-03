@@ -29,9 +29,6 @@ export default {
   get darkMode() {
     const { mode, systemDark } = this;
 
-    console.log('dark mode changed!');
-    console.log(` -> ${mode}`);
-
     if (mode === 'light') return false;
     if (mode === 'dark') return true;
     return systemDark;
@@ -73,9 +70,6 @@ export default {
   },
 
   setMode(mode) {
-    console.log('Setting the dark mode mode...');
-    console.log(` -> ${mode}`);
-
     this.mode = mode;
 
     if (!this.usedMouse)

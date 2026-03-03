@@ -1,0 +1,2 @@
+- Fixed `src/pages/index.astro:62` — replaced `large:space-y-64 lage:pb-64` with `lg:space-y-64 lg:pb-64` (invalid Tailwind prefixes were silently discarded)
+- Removed 4 debug `console.log` calls from `src/scripts/components/page.js` — two in the `darkMode` getter (lines ~32–33) and two in `setMode` (lines ~76–77)

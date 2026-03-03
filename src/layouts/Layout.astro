@@ -1,0 +1,41 @@
+---
+import '../styles/main.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{title || 'Kippy is Online'}</title>
+    <meta name="description" content="Come learn about Kippy!">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=IBM+Plex+Serif:wght@600&display=fallback" rel="stylesheet">
+
+    <script>
+      import '../scripts/main.js';
+    </script>
+  </head>
+  <body
+    class="transition-all"
+    v-component="page"
+    v-class:dark="darkMode"
+  >
+    <a name="top"></a>
+    <main class="k-container relative">
+      <Navigation />
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
