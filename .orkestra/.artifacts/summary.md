@@ -1,2 +1,0 @@
-- Removed stray `package-lock.json` (6,556 lines) that was accidentally included in prior commit
-- `src/pages/projects.astro` change from previous iteration remains intact and unchanged
