@@ -1,30 +1,30 @@
 [planning]
-- Added yarn → pnpm migration to scope per user feedback
-- All other decisions unchanged: Astro SSG, Tailwind v4, keep Vivere + Turbo
-- Added pnpm-specific success criteria (yarn.lock removed, pnpm-lock.yaml present)
-- Added CI/CD config as open technical question since it may reference yarn
+- Examined `src/pages/projects.astro` to understand the project list data structure (title, description, image, tech, github, website, npm)
+- Examined `ProjectStub.astro` to confirm how props are rendered and that null values are handled gracefully
+- Task is small and pattern is clear — skipped questions and self-review
 
 [breakdown]
-
-- Audited all EJS templates, CSS, JS, and config files; confirmed 2 pages, 1 layout, ~12 includes, 8 icon files
-- Vivere v0.1.8 confirmed ESM-safe (has `module` field pointing to ESM build — Vite picks it up natively)
-- No CI/CD config files found; no additional updates needed beyond package.json/scripts
-- Tailwind v2 color aliases (gray=blueGray, blue=indigo, red=rose, purple=violet) require explicit hex overrides in v4 @theme block; provided all values inline in subtask instructions
-- Structured as 3 sequential subtasks: infrastructure scaffold → template/CSS conversion → cleanup+verify
-
+- Task is a single array entry addition to `src/pages/projects.astro`, following the exact pattern of existing vivere/vivere-docs entries
+- No breakdown needed — one file, one change, clear pattern
 
 [work]
-- Migration already done across 3 prior commits; only needed to install deps and verify build
-- Build succeeds: 2 pages built in ~933ms with Astro 5 + Tailwind v4 + Vite
-- Added pnpm.onlyBuiltDependencies to package.json to silence esbuild/sharp warning
+- Followed existing project entry pattern exactly (vivere docs entry with null npm)
+- Build verified successfully with `astro build` — no errors, Orkestra present in rendered HTML
 
 [review]
-- Spawned Correctness and Completeness reviewers in parallel to cover logic correctness, plan conformance, and template conversion quality
-- Both reviewers independently found the same two MEDIUM issues: Tailwind class typos (large:/lage: prefixes silently failing) and debug console.logs in production
-- Tailwind typos violate the "visually identical" success criterion — large-screen spacing is silently absent
-- No HIGH findings; console.log and Tailwind typos are quick one-line fixes warranting a reject cycle
+- Assessed scope as trivial (single object added to an array in one file) — used one combined reviewer instead of full panel
+- Reviewer confirmed all fields match existing entry patterns and all success criteria satisfied
+- No findings at any severity level
 
 [work]
-- Both MEDIUM issues from review addressed directly with minimal targeted edits
-- No other changes made; LOW observations noted but not blocking
+- Addressed PR comment: corrected Orkestra tech stack to Rust primary with Typescript/React frontend
+
+[review]
+- Spawned correctness and completeness reviewers in parallel (2 of 4 specialists — appropriate for a trivial code change with one unexpected file)
+- Both reviewers independently flagged the stray `package-lock.json` as the only issue; code change itself passed all checks
+- Rejected due to unintended 6,556-line file inclusion — the code change is approved but the changeset needs cleanup
+
+[work]
+- Addressed review feedback: removed accidental `package-lock.json` via `git rm` and committed
+- Verified final diff against master shows only intended `src/pages/projects.astro` change plus orkestra artifacts
 
