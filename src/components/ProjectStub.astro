@@ -4,7 +4,7 @@ import GitHub from './icons/GitHub.astro';
 import Npm from './icons/Npm.astro';
 import Web from './icons/Web.astro';
 
-const { title, description, tech, image, github, npm, website, idx } = Astro.props;
+const { title, description, tech, image, comingSoon, github, npm, website, idx } = Astro.props;
 const wrapperClass = idx % 2 !== 0 ? 'col-start-7' : '';
 ---
 <div class={`col-span-5 ${wrapperClass}`}>
@@ -13,6 +13,10 @@ const wrapperClass = idx % 2 !== 0 ? 'col-start-7' : '';
       <div class="h-full w-full border-2 rounded-t-lg bg-white dark:bg-gray-900 object-cover flex items-center justify-center p-4 overflow-hidden">
         <img src={image.src.light} alt={image.alt} v-if="!darkMode" />
         <img src={image.src.dark} alt={image.alt} v-if="darkMode" hidden />
+      </div>
+    ) : comingSoon ? (
+      <div class="h-full border-2 p-8 rounded-t-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center">
+        <p class="font-serif text-4xl text-gray-400 dark:text-gray-500">Coming Soon...</p>
       </div>
     ) : (
       <VivereDemo />
