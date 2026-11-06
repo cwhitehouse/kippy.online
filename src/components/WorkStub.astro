@@ -1,5 +1,5 @@
 ---
-const { title, description, dates, tech, color, image, flip } = Astro.props;
+const { title, description, dates, tech, color, image, flip, current } = Astro.props;
 const imgClass = flip ? 'col-start-1 col-end-6' : 'col-start-7 col-end-12';
 const contentClass = flip ? 'col-start-7 col-end-12' : 'col-start-1 col-end-6';
 ---
@@ -7,9 +7,10 @@ const contentClass = flip ? 'col-start-7 col-end-12' : 'col-start-1 col-end-6';
   class="lg:grid grid-cols-12 col-span-12 items-center"
   v-component
   v-data:hovering="false"
-  v-data:src={image.src}
-  v-data:alt-src={image.altSrc}
+  v-data:src={image?.src}
+  v-data:alt-src={image?.altSrc}
 >
+  {image ? (
   <picture class={imgClass}>
     {image.webp && (
       <source
@@ -28,9 +29,19 @@ const contentClass = flip ? 'col-start-7 col-end-12' : 'col-start-1 col-end-6';
       loading="lazy"
     />
   </picture>
+  ) : (
+    <div class={`${imgClass} w-full row-start-1 h-72 lg:h-screen max-h-800 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400 font-serif text-2xl`}>{title}</div>
+  )}
   <div class={`${contentClass} row-start-1 mt-8 lg:mt-0`}>
-    <h2 class="font-semibold font-serif text-3xl lg:text-4xl">{title}</h2>
-    <p class="font-mono text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-2">{dates}</p>
+    <h2 class="font-semibold font-serif text-3xl lg:text-4xl">
+      {title}
+      {current && (
+        <span class="ml-3 inline-block align-middle w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-300 ring-4 ring-blue-500/20 dark:ring-blue-300/20" title="Current">
+          <span class="sr-only">Current</span>
+        </span>
+      )}
+    </h2>
+    <p class="font-mono text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-2">{dates}{current && <span class="text-blue-600 dark:text-blue-300 font-semibold">Present</span>}</p>
     <div class={`h-1 w-12 lg:w-20 mt-3 ${color}`}></div>
     <p class="mt-4 text-lg lg:text-2xl">{description}</p>
     <p class="font-mono text-sm lg:text-base text-gray-600 dark:text-gray-300 mt-4">{tech}</p>

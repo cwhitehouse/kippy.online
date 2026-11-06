@@ -4,7 +4,7 @@ import GitHub from './icons/GitHub.astro';
 import Npm from './icons/Npm.astro';
 import Web from './icons/Web.astro';
 
-const { title, description, tech, image, comingSoon, placeholder, github, npm, website, idx } = Astro.props;
+const { title, description, tech, image, comingSoon, placeholder, github, npm, website, more, idx } = Astro.props;
 const wrapperClass = idx % 2 !== 0 ? 'col-start-7' : '';
 ---
 <div class={`col-span-5 ${wrapperClass}`}>
@@ -29,6 +29,9 @@ const wrapperClass = idx % 2 !== 0 ? 'col-start-7' : '';
   <p class="font-semibold font-serif text-3xl lg:text-4xl mt-8">{title}</p>
   <p class="text-lg lg:text-2xl mt-4">{description}</p>
   <p class="font-mono text-sm text-gray-600 dark:text-gray-300 mt-4">{tech}</p>
+  {more && (
+    <p class="mt-4"><a class="text-link-blue text-lg" href={more.href}>{more.label} &rarr;</a></p>
+  )}
   <div class="flex items-center mt-4 space-x-4">
     {github && (
       <a class="icon-link-blue py-1" href={github} aria-label="Link to GitHub">
