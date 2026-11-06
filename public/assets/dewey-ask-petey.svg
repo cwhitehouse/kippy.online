@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A phone showing a Dewey question and a cited answer">
+<style>.s{font-family:'Young Serif',Georgia,serif}.f{font-family:Figtree,system-ui,sans-serif}</style>
+<rect width="1200" height="800" fill="#f6ebd9"/>
+<ellipse cx="600" cy="772" rx="200" ry="13" fill="#c9ad82" opacity=".5"/>
+<rect x="400" y="40" width="400" height="730" rx="54" fill="#2b2520"/>
+<rect x="412" y="52" width="376" height="706" rx="44" fill="#fdfbf5"/>
+<rect x="540" y="66" width="120" height="22" rx="11" fill="#2b2520"/>
+<text class="s" x="440" y="132" font-size="28" fill="#2b2520">Dewey</text>
+<circle cx="752" cy="124" r="20" fill="#fff" stroke="#ece1cd"/>
+<g stroke="#2b2520" stroke-width="2" stroke-linecap="round"><line x1="744" y1="118" x2="760" y2="118"/><line x1="744" y1="124" x2="760" y2="124"/><line x1="744" y1="130" x2="760" y2="130"/></g>
+<rect x="430" y="168" width="340" height="540" rx="22" fill="#fff" stroke="#ece1cd"/>
+<g class="f">
+<text x="454" y="206" font-size="12" font-weight="600" letter-spacing="1" fill="#726a5e">ASK PETEY</text>
+<rect x="448" y="222" width="304" height="52" rx="26" fill="#f1e9db"/>
+<text x="470" y="254" font-size="15" font-weight="500" fill="#726a5e">What are the safest first foods f…</text>
+<circle cx="728" cy="248" r="18" fill="#e3a23b"/>
+<polyline points="724,241 732,248 724,255" fill="none" stroke="#2b2520" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="454" y="318" font-size="14" fill="#8a8276">Answering from <tspan font-weight="700" fill="#2b2520">ParentData</tspan></text>
+<g font-size="17" font-weight="500" fill="#2b2520"><text x="454" y="360">Starting solids at 6 months is</text><text x="454" y="386">recommended. Begin with single-</text><text x="454" y="412">ingredient purees like sweet potato</text><text x="454" y="438">or avocado.</text></g>
+<text x="454" y="500" font-size="11" font-weight="600" letter-spacing="1.2" fill="#726a5e">SOURCE</text>
+<rect x="452" y="514" width="176" height="30" rx="15" fill="#6b5214"/>
+<text x="540" y="534" text-anchor="middle" font-size="13" font-weight="600" fill="#f3e3bf">Crib Sheet · Chapter 3</text>
+</g>
+<rect x="454" y="580" width="262" height="9" rx="4.5" fill="#ece1cd"/><rect x="454" y="602" width="198" height="9" rx="4.5" fill="#ece1cd"/><rect x="454" y="624" width="228" height="9" rx="4.5" fill="#ece1cd"/>
+</svg>
