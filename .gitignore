@@ -2,3 +2,13 @@ dist
 node_modules
 .DS_STORE
 .orkestra/.artifacts
+
+# atelier — derived, regenerated on demand
+.atelier/**/.shots/
+.atelier/.exports/
+.atelier/.cache/
+.atelier/.log
+# shipped examples, rewritten by every atelier command
+.atelier/**/example-*/
+# spot checks — thrown away, not kept
+.atelier/proof/
