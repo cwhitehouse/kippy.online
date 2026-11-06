@@ -1,0 +1,1 @@
+- 2026-11-06  picked Ask Petey (v3), as a stand-in: askdewey.com tokens/fonts are real, but the phone, 'ASK PETEY' label and layout are invented; real Ask Petey UI not seen. Redraw from a real screenshot later. ParentData/Petey on the public site needs sign-off. Pebble Cairn, Echo, Quote Stone not picked.
