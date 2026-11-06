@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GitHub from '../../components/icons/GitHub.astro';
+import Web from '../../components/icons/Web.astro';
+
+const subs = [
+  { title: 'Sub-project A', description: 'Placeholder: one line about it.', github: '#', website: '#' },
+  { title: 'Sub-project B', description: 'Placeholder: one line about it.', github: '#', website: '#' },
+  { title: 'Sub-project C', description: 'Placeholder: one line about it.', github: '#', website: null },
+];
+---
+
+<Layout title="Tiniest Fox | Kippy is Online">
+  <div class="k-grid">
+    <div class="col-start-3 col-end-10 pt-48 pb-16">
+      <div><a class="text-link-blue" href="/projects">&larr; Projects</a></div>
+      <h1 class="mt-8 inline-block text-6xl lg:text-7xl font-serif font-semibold border-b-2 border-blue-500 dark:border-blue-300">Tiniest Fox</h1>
+      <h2 class="text-3xl lg:text-4xl mt-8 leading-normal lg:leading-relaxed">Placeholder: a sentence on what ties these together.</h2>
+    </div>
+  </div>
+  <div class="k-grid pb-24 lg:pb-32">
+    <ul class="col-start-3 col-end-10 space-y-16">
+      {subs.map((s) => (
+        <li>
+          <p class="font-semibold font-serif text-3xl lg:text-4xl">{s.title}</p>
+          <p class="text-lg lg:text-2xl mt-4">{s.description}</p>
+          <div class="flex items-center mt-4 space-x-4">
+            {s.github && <a class="icon-link-blue py-1" href={s.github} aria-label="Link to GitHub"><GitHub size={24} /></a>}
+            {s.website && <a class="icon-link-blue py-1" href={s.website} aria-label="Link to Website"><Web size={24} /></a>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>
