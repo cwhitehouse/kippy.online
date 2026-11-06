@@ -1,0 +1,1 @@
+- 2026-11-06  picked Dot + Present for the Work page: dot beside Dewey's title, dates '2025—Present' with Present in accent. Projects page (Orkestra first -> orkestra-ts, single Tiniest Fox entry -> sub-projects page) was shown in v2/v3 and not objected to. Dewey details, Tiniest Fox sub-projects, orkestra-ts URL, Coming Soon on Orkestra still unsettled.
